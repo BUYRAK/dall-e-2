@@ -3,7 +3,7 @@ import requests
 import shutil
 from PIL import Image
 
-openai.api_key = "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"
+openai.api_key = "your_api_key"
 
 
 def createImageWithText(keyword, search_key, size):
