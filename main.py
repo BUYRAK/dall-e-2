@@ -6,12 +6,12 @@ from PIL import Image
 openai.api_key = "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"
 
 
-def createImageWithText(keyword, search_key):
+def createImageWithText(keyword, search_key, size):
     for i in range(0, 100):
         response = openai.Image.create(
             prompt=keyword,
             n=1,
-            size="1024x1024"
+            size=size
         )
         image_url = response['data'][0]['url']
         print(image_url)
@@ -31,4 +31,5 @@ def createImageWithText(keyword, search_key):
 if __name__ == '__main__':
     keyword = input("Please enter a few words: ")
     search_key = input("Please enter your keyword(to save): ")
-    createImageWithText(keyword, search_key)
+    size = input("Please enter your image size(e.g 1024x1024):")
+    createImageWithText(keyword, search_key, size)
